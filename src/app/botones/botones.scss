@@ -1,6 +1,6 @@
 .py-5
 {
-    background-color: #282c34;
+    background-color: #fff;
     .col-md-6
     {
         background-color: inherit;
@@ -17,6 +17,10 @@
 .btn-group-vertical
 {
     display:block;
+}
+
+.background {
+    height: calc(100vh - 18px);
 }
 
 #notLoggedImg

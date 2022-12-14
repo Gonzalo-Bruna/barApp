@@ -1,8 +1,8 @@
-<section class="py-5">
+<section *ngIf="isLoggedIn" class="py-5">
     <div class="container py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6 col-xl-4">
-                <div *ngIf="isLoggedIn" class="btn-group-vertical column-content-center text-center align-items-center center">
+                <div class="btn-group-vertical column-content-center text-center align-items-center center">
                     
                     <button type="button" class="btn btn-danger btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
                         <a href="/omesa" routerLink="omesa" style="text-decoration: none; color: #fff;">Abrir Mesa</a>
@@ -38,8 +38,32 @@
                         <a href="/inventario" routerLink="inventario" style="text-decoration: none; color: #fff;">Ver Inventario</a>
                     </button>
                 </div>
-                <img id="notLoggedImg" class="img-fluid" *ngIf="!isLoggedIn" src="../../assets/Images/notLogged.jpeg">
             </div>
         </div>
     </div>
+    
 </section>
+<div *ngIf="!isLoggedIn" class="background d-flex justify-content-center align-items-center" style="background-color: #E5E4E2;">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-9">
+            <div class="container p-5 shadow row rounded border bg-white">
+                <div class="row">
+                    <div class="col-6 d-flex flex-column">
+                        <h2 class="fw-bold" style="font-size: 3rem">¡Bienvenido!</h2>
+                        <img src="../../assets/SVG/barista.svg" alt="barista" width="250" height="250" />
+                    </div>
+                    <div class="col-6 d-flex flex-column justify-content-center">
+                        <p class="text-dark" style="font-size: 1rem">Bienvenido a BarApp, la aplicación perfecta para administrar y hacer seguimiento de los pedidos en tu bar. <br/> Con BarApp, podrás mantener un registro preciso de las bebidas y comidas que se sirven en tu bar, así como de las mesas y los clientes. Además, podrás hacer seguimiento del inventario y del personal, para asegurarte de que todo esté funcionando de manera eficiente.</p>
+                        <p class="text-dark text-center fw-semibold" style="font-size: 1rem">Comienza iniciando sesión aquí
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+                          </svg>
+                        </p>
+                        <a href="/login" class="btn w-100 text-white" style="background-color:#cc220b;">Iniciar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
