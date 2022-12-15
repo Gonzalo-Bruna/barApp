@@ -70,7 +70,7 @@ export class login implements OnInit
   redirectToMenu(): void {
     // window.location.reload();
     setInterval(function(){
-      window.location.href = '/menu';
+      window.location.href = '/';
     },2000);
   }
 
