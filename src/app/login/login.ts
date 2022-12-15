@@ -54,11 +54,11 @@ export class login implements OnInit
 
           default:
           {
-            console.log("jaja saludos");
             break;
           }
         }
-        this.reloadPage();
+        this.isLoggedIn = true;
+        this.redirectToMenu();
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -67,7 +67,11 @@ export class login implements OnInit
     });
   }
 
-  reloadPage(): void {
-    window.location.reload();
+  redirectToMenu(): void {
+    // window.location.reload();
+    setInterval(function(){
+      window.location.href = '/menu';
+    },2000);
   }
+
 }
