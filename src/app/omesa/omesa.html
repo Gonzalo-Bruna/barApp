@@ -1,11 +1,40 @@
-<section class="py-5">
-    <div class="container py-5">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6 col-xl-4">
-                <div id="tabla" class="fluid-container"> <!---->
+<section class="background d-flex justify-content-center align-items-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-11 col-md-8 mx-auto">
+                <div >
+                    <div class="row row-cols-3 text-center shadow border p-3 bg-white rounded-top">
+                        <div class="fw-semibold">Número</div>
+                        <div class="fw-semibold">Estado</div>
+                        <div class="fw-semibold">A usar</div>
+                    </div>
+                    <div class="mt-2 row row-cols-3 text-center shadow border p-3 bg-white rounded-bottom align-items-center">
+                        <ng-container *ngFor="let item of datos">
+                            <p class="text-dark">{{item.id}}</p>
+                            <p class="text-dark" *ngIf="item.status">LIBRE</p>
+                            <p class="text-dark" *ngIf="!item.status">OCUPADA</p>
+                            <input *ngIf="!item.status" type="radio" id="check" value={{item.id}} (change)="selectMesa($event)" name="selection">
+                            <p *ngIf="item.status" class="text-dark">-</p>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 mx-auto">
+                        <form (ngSubmit)="setMesaStatus()">
+                            <input type="submit" id="boton" value="Seleccionar" class="btn text-white w-100 m-0 mt-4 p-2" style="background-color:#cc220b;">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
 
-                    <table class="table table-primary" >
+<!-- <div class="col-md-8 col-xl-6 mx-auto">
+                <div id="tabla">
 
+                    <table class="table table-primary rounded" >
                         <thead>
                             <tr>
                                 <th scope="col">NUMERO</th>
@@ -14,7 +43,7 @@
                             </tr>                      
                         </thead>
 
-                        <tbody  >
+                        <tbody>
                             <tr *ngFor="let item of datos">
                                 <td scope="row"  >{{item.id}}</td>
                                 <td scope="row" *ngIf="!(item.status)">LIBRE</td>
@@ -32,7 +61,4 @@
                         <input type="submit" id="boton" value="seleccionar">
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </div> -->
