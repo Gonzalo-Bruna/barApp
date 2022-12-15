@@ -24,9 +24,13 @@
                 <div class="row">
                     <div class="col-12 col-md-6 mx-auto">
                         <form (ngSubmit)="setMesaStatus()">
-                            <input type="submit" id="boton" value="Seleccionar" class="btn text-white w-100 m-0 mt-4 p-2" style="background-color:#cc220b;">
+                            <input [disabled]="!this.selected" type="submit" id="boton" value="Seleccionar" class="btn text-white w-100 m-0 my-4 p-2" style="background-color:#cc220b;">
                         </form>
                     </div>
+                </div>
+
+                <div *ngIf="correct" class="alert alert-success text-center">
+                    <strong class="">¡Mesa abierta correctamente!</strong>
                 </div>
             </div>
         </div>

@@ -9,7 +9,8 @@ import { mesa } from '../_classes/mesa';
 })
 
 export class omesa {
-  selected:number =0
+  selected:number = 0
+  correct: boolean = false;
   datos:Array<mesa>=[];
   constructor(public BackEnd:AppService) {}
   ngOnInit(): void
@@ -23,16 +24,22 @@ export class omesa {
   }
 
   public selectMesa(event:any)
-  {  
+  {
+    this.correct = false;
     this.selected =(event.target.value);
     console.log(this.selected);
   }
 
   public setMesaStatus()
   {
+    if(!this.selected){
+      return;
+    }
     this.BackEnd.mod_mesaStatus(this.selected).subscribe({next: (value: any) =>
       {
-        location.assign('')
+        this.correct = true;
+        this.datos[this.selected-1].status = true;
+        this.selected = 0;
       }});
   }
 }
