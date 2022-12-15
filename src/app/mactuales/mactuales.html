@@ -1,31 +1,22 @@
-<section class="py-5">
-    <div class="container py-5">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6 col-xl-4">
-                <div id="tabla" class="fluid-container">
-
-                    <table class="table table-primary" >
-
-                        <thead>
-                            <tr>
-                                <th scope="col">NUMERO</th>
-                                <th scope="col">ESTADO</th>
-                            </tr>                      
-                        </thead>
-
-                        <tbody  >
-                            <tr *ngFor="let item of datos">
-                                <td scope="row"  >{{item.id}}</td>
-                                <td scope="row" *ngIf="item.status">Ocupada</td>
-                                <td scope="row" *ngIf="!(item.status)">Libre</td>
-                            </tr>
-                            
-                        </tbody>
-                        
-                    </table>
-                    
+<section class="background d-flex justify-content-center align-items-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-11 col-md-8 mx-auto">
+                <div >
+                    <div class="row row-cols-2 text-center shadow border p-3 bg-white rounded-top">
+                        <div class="fw-semibold">Número</div>
+                        <div class="fw-semibold">Estado</div>
+                    </div>
+                    <div class="mt-2 row row-cols-2 text-center shadow border p-3 bg-white rounded-bottom align-items-center">
+                        <ng-container *ngFor="let item of datos">
+                            <p class="text-dark">{{item.id}}</p>
+                            <p class="text-dark" *ngIf="item.status">LIBRE</p>
+                            <p class="text-dark" *ngIf="!item.status">OCUPADA</p>
+                        </ng-container>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
 </section>
