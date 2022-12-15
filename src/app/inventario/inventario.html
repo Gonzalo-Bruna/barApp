@@ -1,5 +1,28 @@
-<section class="py-5">
-    <div class="container py-5">
+<section class="background d-flex justify-content-center align-items-center py-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <h3 class="text-center fw-semibold" style="font-size: 2rem;">Inventario</h3>
+            </div>
+            <div class="col-11 col-md-8 col-xl-6 mx-auto">
+                <div >
+                    <div class="row row-cols-2 text-center shadow border p-3 bg-white rounded-top">
+                        <div class="fw-semibold">Nombre</div>
+                        <div class="fw-semibold">Precio</div>
+                        <!-- <div class="fw-semibold">Ventas</div> -->
+                    </div>
+                    <div class="mt-2 row row-cols-2 text-center shadow border p-3 bg-white rounded-bottom align-items-center">
+                        <ng-container *ngFor="let item of datos">
+                            <p class="text-dark">{{item.nombre}}</p>
+                            <p class="text-dark">{{item.precio}}</p>
+                            <!-- <p class="text-dark">{{item.ventas}}</p> -->
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6 col-xl-4">
                 <div id="tabla" class="fluid-container">
@@ -27,5 +50,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
+

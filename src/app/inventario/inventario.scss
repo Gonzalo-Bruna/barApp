@@ -1,13 +1,7 @@
-#tabla
-{
-    top: 10vh;
-    left: 39%;
-}
-.py-5
-{
-    background-color: #282c34;
-    .col-md-6
-    {
-        background-color: inherit;
-    }
+.background{
+    background: url("../../assets/Images/fondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
 }

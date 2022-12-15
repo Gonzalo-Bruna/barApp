@@ -1,39 +1,39 @@
-<section class="py-5">
-    <div class="container py-5">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6 col-xl-4">
-                <div id="tabla" class="fluid-container" (ngSubmit) = "setMesaStatus()"> <!---->
-
-                    <table class="table table-primary" >
-
-                        <thead>
-                            <tr>
-                                <th scope="col">NUMERO</th>
-                                <th scope="col">ESTADO</th>
-                                <th scope="col">A CERRAR</th>
-                            </tr>                      
-                        </thead>
-
-                        <tbody  >
-                            <tr *ngFor="let item of datos">
-                                <td scope="row"  >{{item.id}}</td>
-                                <td scope="row" *ngIf="!(item.status)">LIBRE</td>
-                                <td scope="row" *ngIf="item.status">OCUPADA</td>
-                                <td scope="row" *ngIf="item.status" id="toClose">
-                                    <input type="radio" id="check" value={{item.id}} (change)="selectMesa($event)" name="selection">
-                                </td>
-                                <td scope="row" *ngIf="!(item.status)">-</td>
-                            </tr>
-                            
-                        </tbody>
-                        
-                    </table>
-                    <form (ngSubmit)="setMesaStatus()">
-                        <input type="submit" id="boton" value="seleccionar">
-                    </form>
-
+<section class="background d-flex justify-content-center align-items-center py-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <h3 class="text-center fw-semibold" style="font-size: 2rem;">Selecciona la mesa a cerrar</h3>
+            </div>
+            <div class="col-11 col-md-8 mx-auto">
+                <div >
+                    <div class="row row-cols-3 text-center shadow border p-3 bg-white rounded-top">
+                        <div class="fw-semibold">Número</div>
+                        <div class="fw-semibold">Estado</div>
+                        <div class="fw-semibold">A cerrar</div>
+                    </div>
+                    <div class="mt-2 row row-cols-3 text-center shadow border p-3 bg-white rounded-bottom align-items-center">
+                        <ng-container *ngFor="let item of datos">
+                            <p class="text-dark">{{item.id}}</p>
+                            <p class="text-dark" *ngIf="item.status">LIBRE</p>
+                            <p class="text-dark" *ngIf="!item.status">OCUPADA</p>
+                            <input *ngIf="item.status" type="radio" id="check" value={{item.id}} (change)="selectMesa($event)" name="selection">
+                            <p *ngIf="!item.status" class="text-dark">-</p>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 mx-auto">
+                        <form (ngSubmit)="setMesaStatus()">
+                            <input [disabled]="!selected" type="submit" id="boton" value="Seleccionar" class="btn text-white w-100 m-0 my-4 p-2" style="background-color:#cc220b;">
+                        </form>
+                    </div>
+                </div>
+                
+                <div *ngIf="correct" class="alert alert-success text-center">
+                    <strong class="">¡Mesa cerrada correctamente!</strong>
                 </div>
             </div>
         </div>
     </div>
+    
 </section>
