@@ -1,31 +1,37 @@
-.py-5
-{
-    background-color: #fff;
-    .col-md-6
-    {
-        background-color: inherit;
-    }
-}
-.btn-lg
-{
-    padding: 1vh;
-    border-radius: 0%;
-    float: center;
-    max-width: 60%;
-}
+// .py-5
+// {
+//     background-color: #fff;
+//     .col-md-6
+//     {
+//         background-color: inherit;
+//     }
+// }
+// .btn-lg
+// {
+//     padding: 1vh;
+//     border-radius: 0%;
+//     float: center;
+//     max-width: 60%;
+// }
 
-.btn-group-vertical
-{
-    display:block;
-}
+// .btn-group-vertical
+// {
+//     display:block;
+// }
 
 .background {
+    background: url("../../assets/Images/fondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
     height: calc(100vh - 18px);
 }
 
-#notLoggedImg
-{
+// #notLoggedImg
+// {
 
-    border-radius: 15%;
-    margin-left: -25%;
-}
+//     border-radius: 15%;
+//     margin-left: -25%;
+// }
